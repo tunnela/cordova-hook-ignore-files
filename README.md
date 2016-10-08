@@ -11,7 +11,7 @@ $ npm i --save-dev cordova-hook-ignore-files
 
 ```xml
 <!-- config.xml -->
-<hook type="after_prepare" src="./node_modules/cordova-hook-ignore-files/ignore-files.js" type="after_build" />
+<hook type="after_prepare" src="./node_modules/cordova-hook-ignore-files/ignore-files.js" />
 ```
 
 Ignore files ie. assets in `config.xml` with following syntax:
