@@ -1,6 +1,6 @@
 {
   "name": "cordova-hook-ignore-files",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Apache Cordova hook script for ignoring files from build",
   "main": "ignore-files.js",
   "scripts": {
