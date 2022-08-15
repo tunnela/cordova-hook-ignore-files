@@ -31,4 +31,4 @@ Lauri Tunnela is a young and passionate B.Eng. from Finland. He does everything 
 
 cordova-hook-ignore-files is licensed under The MIT License (MIT). 
 
-Copyright (c) 2016 Lauri Tunnela
+Copyright (c) 2022 Lauri Tunnela
