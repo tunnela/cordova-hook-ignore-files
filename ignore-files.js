@@ -1,21 +1,25 @@
 #!/usr/bin/env node
+var q = require('q');
+var fs = require('fs');
+var path = require('path');
+var glob = require('glob');
+var xml2js = require('xml2js');
+var del = require('del');
+
 module.exports = function(context) {
-  var fs = require('fs'),
-  del = require('del');
-  path = require('path'),
-  deferral = require('q').defer(),
-  xml2js = require('xml2js'),
-  parser = new xml2js.Parser(),
-  glob = require("glob");
+  var deferral = q.defer();
+  var parser = new xml2js.Parser();
 
   fs.readFile('config.xml', 'utf8', function (err, xml) {
     if (err) {
       deferral.reject('Unable to load config.xml');
+
       return;
     }
     parser.parseString(xml, function (err, config) {
       if (err) {
         deferral.reject('Unable to parse config.xml');
+
         return;
       }
       if (config.widget === undefined || config.widget['ignore-files'] === undefined) {
@@ -29,7 +33,8 @@ module.exports = function(context) {
         }
         glob(ignoreFiles[i].$.ignore, {}, function (er, files) {
           for (var i = 0, l = files.length; i < l; ++i) {
-            del.sync(files[i]);
+            del.deleteSync(files[i]);
+
             console.log('ignore-files.js: File `' + files[i] + '` ignored.');
           }
         })
