@@ -2,7 +2,6 @@
   "name": "cordova-hook-ignore-files",
   "version": "1.0.2",
   "description": "Apache Cordova hook script for ignoring files from build",
-  "type": "commonjs",
   "main": "ignore-files.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,7 +24,7 @@
   },
   "homepage": "https://github.com/tunnela/cordova-hook-ignore-files#readme",
   "dependencies": {
-    "del": "^7.0.0",
+    "del": "^6.1.1",
     "glob": "^7.1.1",
     "q": "^1.5.1",
     "xml2js": "^0.4.23"
