@@ -2,7 +2,7 @@
   "name": "cordova-hook-ignore-files",
   "version": "1.0.2",
   "description": "Apache Cordova hook script for ignoring files from build",
-  "type": "module",
+  "type": "commonjs",
   "main": "ignore-files.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
