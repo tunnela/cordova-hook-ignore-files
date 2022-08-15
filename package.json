@@ -22,7 +22,7 @@
     "url": "https://github.com/tunnela/cordova-hook-ignore-files/issues"
   },
   "homepage": "https://github.com/tunnela/cordova-hook-ignore-files#readme",
-  "devDependencies": {
+  "dependencies": {
     "del": "^2.2.2",
     "glob": "^7.1.1",
     "q": "^1.4.1",
