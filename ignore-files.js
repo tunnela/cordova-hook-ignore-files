@@ -31,13 +31,20 @@ module.exports = function(context) {
         if (ignoreFiles[i].$ === undefined || ignoreFiles[i].$.ignore === undefined) {
           continue;
         }
-        glob(ignoreFiles[i].$.ignore, {}, function (er, files) {
-          for (var i = 0, l = files.length; i < l; ++i) {
-            del.sync(files[i]);
+        var files = glob.sync(ignoreFiles[i].$.ignore, {});
 
-            console.log('ignore-files.js: File `' + files[i] + '` ignored.');
-          }
-        })
+        if (!files.length) {
+          console.log('ignore-files.js: Nothing to ignore with pattern `' + ignoreFiles[i].$.ignore + '`.');
+
+          continue;
+        }
+        console.log('ignore-files.js: Ignoring with pattern `' + ignoreFiles[i].$.ignore + '`.');
+
+        for (var j = 0, k = files.length; j < k; ++j) {
+          del.sync(files[j]);
+
+          console.log('ignore-files.js: File `' + files[j] + '` ignored.');
+        }
       }
       deferral.resolve();
     });
